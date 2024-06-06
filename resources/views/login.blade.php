@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
     <title>Login</title>
 </head>
 <body>
@@ -17,7 +18,7 @@
                <span class="card-side"></span>
                <div class="flip-card__inner">
                   <div class="flip-card__front">
-                     <div class="title">Inicia Sesion</div>
+                     <div class="title">Inicia Sesión</div>
                      <form class="flip-card__form" action="">
                         <input class="flip-card__input" name="email" placeholder="Correo" type="email">
                         <input class="flip-card__input" name="password" placeholder="Contraseña" type="password">
@@ -30,7 +31,7 @@
                         <input class="flip-card__input" placeholder="Nombre" type="name">
                         <input class="flip-card__input" name="email" placeholder="Correo" type="email">
                         <input class="flip-card__input" name="password" placeholder="Contraseña" type="password">
-                        <button class="flip-card__btn">Confirm!</button>
+                        <button class="flip-card__btn">Confirmar!</button>
                      </form>
                   </div>
                </div>
