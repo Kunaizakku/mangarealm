@@ -22,7 +22,7 @@
                      <form class="flip-card__form" action="">
                         <input class="flip-card__input" name="email" placeholder="Correo" type="email">
                         <input class="flip-card__input" name="password" placeholder="Contraseña" type="password">
-                        <button class="flip-card__btn">Let`s go!</button>
+                        <button class="flip-card__btn">Entar!</button>
                      </form>
                   </div>
                   <div class="flip-card__back">
