@@ -26,7 +26,7 @@
                      </form>
                   </div>
                   <div class="flip-card__back">
-                     <div class="title">Registrate tonotos</div>
+                     <div class="title">Registrate</div>
                      <form class="flip-card__form" action="">
                         <input class="flip-card__input" placeholder="Nombre" type="name">
                         <input class="flip-card__input" name="email" placeholder="Correo" type="email">
