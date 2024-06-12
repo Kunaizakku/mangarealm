@@ -8,5 +8,6 @@
 </head>
 <body>
     <h1>Hola tonotos</h1>
+    <a href="{{ route('login') }}">hola</a>
 </body>
 </html>
