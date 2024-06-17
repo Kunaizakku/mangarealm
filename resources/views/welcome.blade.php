@@ -66,8 +66,10 @@
     </div> 
     
    
-
-    <h1>Hola tonotos</h1>
-    <p>Bienvenido a mi sitio web.</p>
+    <div class="a">
+        <h1>Hola tonotos</h1>
+        <p>Bienvenido a mi sitio web.</p>
+    </div>
+    
 </body>
 </html>
