@@ -105,3 +105,43 @@ body{
   transform: rotateY(180deg);
 }
   
+
+/* navbar */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 1rem;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+.navbar a:hover {
+  background-color: #575757;
+}
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.navbar .menu {
+  display: flex;
+}
+.navbar .menu a {
+  margin-left: 1rem;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.content {
+  margin-top: 70px;
+}
