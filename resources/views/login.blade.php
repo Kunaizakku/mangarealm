@@ -27,11 +27,12 @@
                   </div>
                   <div class="flip-card__back">
                      <div class="title">Registrate</div>
-                     <form class="flip-card__form" action="">
-                        <input class="flip-card__input" placeholder="Nombre" type="name">
+                     <form class="flip-card__form" action="{{route('usuario.insertar')}}" method="POST">
+                        @csrf
+                        <input class="flip-card__input" name="username" placeholder="Username" type="username">
                         <input class="flip-card__input" name="email" placeholder="Correo" type="email">
                         <input class="flip-card__input" name="password" placeholder="Contraseña" type="password">
-                        <button class="flip-card__btn">Confirmar!</button>
+                        <button type="submit" class="flip-card__btn">Confirmar!</button>
                      </form>
                   </div>
                </div>
