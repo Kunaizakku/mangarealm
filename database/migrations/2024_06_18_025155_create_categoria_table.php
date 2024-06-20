@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('categoria', function (Blueprint $table) {
             $table->id();
-            $table->text('nomn_cat');
+            $table->text('nom_cat');
             $table->timestamps();
         });
     }

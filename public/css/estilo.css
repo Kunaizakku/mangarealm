@@ -316,3 +316,26 @@ body{
   text-decoration: underline;
 }
 
+/* estilo tabla catetorias */
+.table_cat table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.table_cat th, .table_cat td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.table_cat th {
+  background-color: #f65e22;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.table_cat tr:nth-child(even) {background-color: #f2f2f2;}
+
+.table_cat tr:hover {background-color: #f65e22; color: white;}
