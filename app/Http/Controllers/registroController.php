@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 
@@ -15,6 +14,7 @@ class registroController extends Controller
         $usuario->username = $req->username;
         $usuario->email = $req->email;
         $usuario->password = $req->password;
+        $usuario->rol = 1;
         $usuario->estatus = 1;
 
         $usuario->save();

@@ -15,9 +15,9 @@
         </div>
         <div class="menu">
             <a href="{{ route('welcome') }}">Inicio</a>
-            <a href="#about">Ejemplo 1</a>
+            <a href="#about">Categorias</a>
+            <a href="{{ route('form_cat') }}">Directorio</a>
             <a href="{{ route('formularios') }}">forms</a>
-            <a href="{{ route('form_cat') }}">cat</a>
             <a href="{{ route('login') }}">Cerrar Sesión</a>
         </div>
     </div>
