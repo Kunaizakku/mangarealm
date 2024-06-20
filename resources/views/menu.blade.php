@@ -14,10 +14,10 @@
             M A N G A R E A L M
         </div>
         <div class="menu">
-            <a href="#home">Inicio</a>
+            <a href="{{ route('welcome') }}">Inicio</a>
             <a href="#about">Ejemplo 1</a>
-            <a href="#services">Ejemplo 2</a>
-            <a href="#contact">Ejemplo 3</a>
+            <a href="{{ route('formularios') }}">forms</a>
+            <a href="{{ route('form_cat') }}">cat</a>
             <a href="{{ route('login') }}">Cerrar Sesión</a>
         </div>
     </div>
