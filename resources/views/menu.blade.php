@@ -10,13 +10,16 @@
 </head>
 <body>
     <div class="navbar">
-        <div class="logo">
-            M A N G A R E A L M
-        </div>
+        <a href="{{ route('welcome') }}">
+            <div class="logo">
+                M A N G A R E A L M
+            </div>
+        </a>
+        
         <div class="menu">
             <a href="{{ route('welcome') }}">Inicio</a>
-            <a href="#about">Categorias</a>
-            <a href="{{ route('form_cat') }}">Directorio</a>
+            <a href="{{ route('cat.listas') }}">Categorias</a>
+            <a href="{{ route('mangas') }}">Directorio</a>
             <a href="{{ route('formularios') }}">forms</a>
             <a href="{{ route('login') }}">Cerrar Sesión</a>
         </div>

@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    @include('menu')
     
+    @include('menu')
 
 </body>
 </html>
