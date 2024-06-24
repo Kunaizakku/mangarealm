@@ -30,6 +30,9 @@
                             Hello, I am a software engineer with over 5 years of experience in web development. I specialize in building scalable, high-performance web applications using modern web technologies such as React, Angular, and Node.js.
                         </p>
                     </div>
+                    <div class="link">
+                        <a href="">ver</a>
+                    </div>
                 </div>
             </div>
         </div>      

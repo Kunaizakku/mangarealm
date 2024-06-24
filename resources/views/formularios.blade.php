@@ -33,7 +33,7 @@
     </div>
     <div class="card">
         <div class="card-details">
-            <p class="text-title">Form Capitulos</p>
+            <p class="text-title">Form paginas</p>
             <p class="text-body">Hola Tonotos</p>
         </div>
         <a type="button" href="#" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
