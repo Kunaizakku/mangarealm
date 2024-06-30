@@ -120,7 +120,7 @@ body{
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
-  
+
 
 /* navbar */
 .navbar {
@@ -173,7 +173,7 @@ body{
   overflow: visible;
   margin: 15px;
  }
- 
+
  .card-details {
   color: black;
   height: 100%;
@@ -181,7 +181,7 @@ body{
   display: grid;
   place-content: center;
  }
- 
+
  .card-button {
   transform: translate(-50%, 125%);
   text-align: center;
@@ -198,24 +198,24 @@ body{
   opacity: 0;
   transition: 0.3s ease-out;
  }
- 
+
  .text-body {
   color: rgb(134, 134, 134);
   text-align: center;
  }
- 
+
  /*Text*/
  .text-title {
   font-size: 1.5em;
   font-weight: bold;
  }
- 
+
  /*Hover*/
  .card:hover {
   border-color: #008bf8;
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
  }
- 
+
  .card:hover .card-button {
   transform: translate(-50%, 50%);
   opacity: 1;
@@ -223,7 +223,7 @@ body{
 
 /* input de actegoria */
 .form-container {
-  max-width: 500px;
+  max-width: 800px;
   background-color: #fff;
   padding: 32px 24px;
   font-size: 14px;
