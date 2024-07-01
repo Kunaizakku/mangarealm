@@ -16,6 +16,7 @@
                 <div class="logo-container">
                     Formulario Mangas
                 </div>
+                {{-- cambio --}}
                 <form class="form" action="{{route('man.insertar')}}" method="POST" >
                     @csrf
                     <div class="form-group">
