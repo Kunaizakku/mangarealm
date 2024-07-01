@@ -15,7 +15,7 @@ class CapituloController extends Controller
     {
         $manga = new Manga();
 
-        $manga->fk_categoria = $req->fk_categoria;
+        $manga->fk_manga = $req->fk_manga;
         $manga->titulo = $req->titulo;
         $manga->descripcion = $req->descripcion;
         $manga->autor = $req->autor;
