@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Manga;
-use App\Models\Categoria;
 
 class CapituloController extends Controller
 {
