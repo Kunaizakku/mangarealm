@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Manga;
 use App\Models\Categoria;
 
-class MangaController extends Controller
+class CapituloController extends Controller
 {
     /* inserción de datos */
     const DEFAULT_ESTATUS = 1;
