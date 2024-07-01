@@ -16,6 +16,7 @@
                 <div class="logo-container">
                     Formulario Mangas
                 </div>
+
                 <form class="form" action="{{route('man.insertar')}}" method="POST" >
                     @csrf
                     <div class="form-group">
@@ -31,13 +32,25 @@
                         <input type="text" id="autor" name="autor" placeholder="Ingresa el nombre del autor" required>
                         <input type="text" id="genero" name="genero" placeholder="Ingresa el genero del manga" required>
 
+
                     </div>
+
+                        <input style="display: none" type="text" id="estatus" name="estatus" placeholder="Ingresa el estatus" required>
+                    </div>fk_categoria	titulo	descripcion	autor	genero	estatus
+
                     <button class="form-submit-btn" type="submit">Guardar</button>
                 </form>
             </div>
         </div>
 
+
     </div>
+
+
+
+    </div>
+
+
 
 </body>
 </html>

@@ -12,11 +12,11 @@ Route::get('/', function () {
 
 Route::post('/registroUsuario', [registroController::class, 'insertar'])->name('usuario.insertar');
 Route::post('/registroCategoria', [CategoriaController::class, 'insertar'])->name('cat.insertar');
-Route::get('/listadoCat', [Categoriacontroller::class,'mostrar'])->name('cat.mostrar');
+Route::post('/registroManga', [MangaController::class, 'insertar'])->name('man.insertar');
+Route::get('/listadoCat', [CategoriaController::class,'mostrar'])->name('cat.mostrar');
 Route::get('/categorias', [Categoriacontroller::class,'ver'])->name('cat.listas');
 Route::post('/registroManga', [MangaController::class, 'insertar'])->name('man.insertar');
 Route::get('/formManga', [MangaController::class,'create'])->name('man.create');
-
 
 
 Route::get('/login', function () {return view('login');})->name('login');
@@ -28,3 +28,6 @@ Route::get('/categoria de mangas', function () {return view('cat_manga');})->nam
 // // Route::get('/categoria', function () {return view('categoria');})->name('cat');
 
 
+Route::get('/listadoMan', [MangaController::class,'mostrar'])->name('man.mostrar');
+
+// Route::get('/categoria', function () {return view('categoria');})->name('cat');
