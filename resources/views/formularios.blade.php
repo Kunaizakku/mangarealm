@@ -22,6 +22,7 @@
             <p class="text-title">Form Manga</p>
             <p class="text-body">Hola Tonotos</p>
         </div>
+        <a type="button" href="{{ route('man.create') }}" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
         <a type="button" href="{{ route('man.mostrar') }}" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
     </div>
     <div class="card">
