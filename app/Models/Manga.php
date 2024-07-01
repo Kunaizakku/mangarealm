@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Manga extends Model
 {
     use HasFactory;
+    protected $table="mangas";
+    public $timestamps=false;
 }
