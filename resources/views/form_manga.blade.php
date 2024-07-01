@@ -16,7 +16,6 @@
                 <div class="logo-container">
                     Formulario Mangas
                 </div>
-                {{-- cambio --}}
                 <form class="form" action="{{route('man.insertar')}}" method="POST" >
                     @csrf
                     <div class="form-group">
@@ -26,7 +25,7 @@
                                 <option value="{{ $categoria->id }}">{{ $categoria->nom_cat }}</option>
                             @endforeach
                         </select>
-                        {{-- <input type="text" id="fk_categoria" name="fk_categoria" placeholder="Ingresa el nombre de la categoria" required> --}}
+
                         <input type="text" id="titulo" name="titulo" placeholder="Ingresa el nombre del titulo" required>
                         <input type="text" id="descripcion" name="descripcion" placeholder="Escribe la descripcion del manga" required>
                         <input type="text" id="autor" name="autor" placeholder="Ingresa el nombre del autor" required>
