@@ -36,7 +36,7 @@
                     </div>
 
                         <input style="display: none" type="text" id="estatus" name="estatus" placeholder="Ingresa el estatus" required>
-                    </div>fk_categoria	titulo	descripcion	autor	genero	estatus
+                    </div>
 
                     <button class="form-submit-btn" type="submit">Guardar</button>
                 </form>

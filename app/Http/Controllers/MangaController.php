@@ -14,8 +14,6 @@ class MangaController extends Controller
     public function insertar(Request $req)
     {
         $manga = new Manga();
-    public function insertar(Request $req){
-        $manga= new Manga();
 
         $manga->fk_categoria = $req->fk_categoria;
         $manga->titulo = $req->titulo;
@@ -23,7 +21,6 @@ class MangaController extends Controller
         $manga->autor = $req->autor;
         $manga->genero = $req->genero;
         $manga->estatus = self::DEFAULT_ESTATUS;
-        $manga->estatus = $req->estatus;
 
         $manga->save();
 
@@ -31,7 +28,7 @@ class MangaController extends Controller
 
     }
 
-    public function create()
+    public function mostrar()
     {
         $categorias = Categoria::all();
         return view('form_manga', compact('categorias'));
@@ -43,9 +40,4 @@ class MangaController extends Controller
     //     $datos_man=Manga::all();
     //     return view("form_manga", compact("datos_man"));
     // }
-    /* Select * from */
-    function mostrar(){
-        $datos_man=Manga::all();
-        return view("form_manga", compact("datos_man"));
-    }
 }
