@@ -20,6 +20,7 @@ Route::get('/formManga', [MangaController::class,'create'])->name('man.create');
 
 
 Route::get('/login', function () {return view('login');})->name('login');
+Route::get('/Form_cap', function () {return view('form_cap');})->name('form_cap');
 Route::get('/formularios', function () {return view('formularios');})->name('formularios');
 Route::get('/form_cat', function () {return view('form_cat');})->name('form_cat');
 Route::get('/mangas', function () {return view('manga');})->name('mangas');
