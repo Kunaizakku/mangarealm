@@ -201,9 +201,10 @@
                         <input type="file" id="portada" name="portada" required>
 
                     </div>
+                    <button class="btn">Guardar</button></button>
                     </div>
 
-                    <input class="form-submit-btn" type="submit" value="Guardar">
+                    
                 </form>
             </div>
         </div>

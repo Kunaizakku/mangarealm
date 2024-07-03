@@ -233,7 +233,6 @@
                     <input type="text" id="email" name="nom_cat" placeholder="Ingresa el nombre de la categoría" required>
                 </div>
                 <button class="btn">Guardar</button>
-                </button>
             </form>
         </div>
 
