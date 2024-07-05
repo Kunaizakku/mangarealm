@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Formulario Mangas</title>
+    <title>Formulario Categorias</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,20 +14,37 @@
             display: flex;
             justify-content: center;
             align-items: center;
-{            min-height: 100vh;
-}        }
+            min-height: 100vh;
+        }
 
         .container {
+            display: flex;
+            justify-content: space-between;
             width: 90%;
-            max-width: 800px;
-            background: url('images/ojosmanga2.png') no-repeat center center; /* Imagen de fondo */
-            background-size: cover; /* Ajusta la imagen para cubrir el área */
+            max-width: 1200px;
+            gap: 60px; /* Incrementa el espacio entre los cuadros */
+        }
+
+        .form-section, .table-section {
+            flex: 1;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            position: relative; /* Asegura que el contenedor se posicione correctamente */
-            z-index: 1; /* Hace que el contenedor esté encima de la imagen de fondo */
+            position: relative;
+            z-index: 1;
         }
+
+        .form-section {
+            background: url('images/ace.png') no-repeat bottom right;
+            background-size: 100% 150%;
+        }
+
+        .table-section {
+            background: url('images/ojosmanga.png') no-repeat bottom right;
+            background-size: 100% 150%; /* Ajusta el tamaño para cubrir toda el área */
+        }
+
 
         .logo-container {
             font-size: 2em;
@@ -50,23 +67,18 @@
         .form {
             display: flex;
             flex-direction: column;
-            background: rgba(255, 255, 255, 0.5); /* Fondo semitransparente para el formulario */
-            border-radius: 10px;
-            padding: 20px;
         }
 
         .form-group {
             margin-bottom: 15px;
         }
 
-        .form-group select,
         .form-group input {
-            width: 95%;
+            width: 96%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1em;
-            margin-bottom: 10px;
         }
 
         .form-submit-btn {
@@ -82,6 +94,37 @@
 
         .form-submit-btn:hover {
             background-color: #218838;
+        }
+
+        .table_cat table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .table_cat th, .table_cat td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .table_cat th {
+            background-color: #f2f2f2;
+        }
+
+        .error, .success {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            color: white;
+        }
+
+        .error {
+            background-color: #dc3545;
+        }
+
+        .success {
+            background-color: #28a745;
         }
 
         .animated-button {
@@ -128,8 +171,8 @@
         }
 
         .animated-button:hover span:last-child {
-            width: 800px;
-            height: 800px;
+            width: 540px;
+            height: 540px;
             opacity: 1;
         }
         .btn {
@@ -180,35 +223,43 @@
     @include('menu')
 
     <div class="container">
-        <div class="logo-container">
-            Formulario Mangas
+        <div class="form-section">
+            <div class="logo-container">
+                Formulario Categoría
+            </div>
+            <form class="form" action="{{route('cap.insertar')}}" method="POST">
+                @csrf
+                <div class="form-group">
+                    <input type="hidden" id="fk_manga" name="fk_manga" value="{{ $id }}">
+                    <input type="text" id="num_capitulo" name="num_capitulo" placeholder="Ingresa el numero del manga" required>
+                </div>
+                <button class="btn">Guardar</button>
+                </button>
+            </form>
         </div>
 
-                <form class="form" action="{{route('man.insertar')}}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">
-                        <select id="fk_cat" name="fk_categoria" required>
-                            <option value="" disabled selected>Selecciona una categoría</option>
-                            @foreach ($categorias as $categoria)
-                                <option value="{{ $categoria->id }}">{{ $categoria->nom_cat }}</option>
-                            @endforeach
-                        </select>
-
-                        <input type="text" id="titulo" name="titulo" placeholder="Ingresa el nombre del titulo" required>
-                        <input type="text" id="descripcion" name="descripcion" placeholder="Escribe la descripcion del manga" required>
-                        <input type="text" id="autor" name="autor" placeholder="Ingresa el nombre del autor" required>
-                        <input type="text" id="genero" name="genero" placeholder="Ingresa el genero del manga" required>
-                        <input type="file" id="portada" name="portada" required>
-
-                    </div>
-                    <button class="btn">Guardar</button></button>
-                    </div>
-
-                    
-                </form>
+        <div class="table-section">
+            <div class="logo-container">
+                Capitulos ya registrados
+            </div>
+            <div class="table_cat">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Capitulos existentes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($datos_cap as $dato)
+                            <tr>
+                                <td>{{ $dato->num_capitulo}}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-    </div>
+
 </body>
 </html>
