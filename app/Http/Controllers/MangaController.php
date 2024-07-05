@@ -29,7 +29,10 @@ class MangaController extends Controller
         // Manejar la carga de la imagen
         $path = null;
         if ($req->hasFile('portada')) {
-            $path = $req->file('portada')->store('portadas', 'public');
+            $image = $req->file('portada');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('portadas'), $filename);
+            $path = $filename;
         }
 
 
@@ -55,6 +58,18 @@ class MangaController extends Controller
         return view('form_manga', compact('categorias'));
     }
 
+    public function mostrarManga()
+    {
+        $manga = Manga::orderby('id', 'desc')->limit(20)->get();
+        return view('welcome', compact('manga'));
+    }
+
+    public function mangaCat($categoriaId)
+    {
+        // Obtener todos los mangas de esa categoría
+        $mangaCat = Manga::where('fk_categoria', $categoriaId)->get();
+        return view('cat_manga', compact('mangaCat', 'categoriaId'));
+    }
 
     /* Select * from */
     // function mostrar(){

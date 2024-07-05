@@ -36,12 +36,12 @@
         }
 
         .form-section {
-            background: url('images/ace.png') no-repeat bottom right;
+            background: url('images/ace2.png') no-repeat bottom right;
             background-size: 100% 150%;
         }
 
         .table-section {
-            background: url('images/ojosmanga.png') no-repeat bottom right;
+            background: url('images/ojosmanga2.png') no-repeat bottom right;
             background-size: 100% 150%; /* Ajusta el tamaño para cubrir toda el área */
         }
 
@@ -176,46 +176,46 @@
             opacity: 1;
         }
         .btn {
- padding: 1.1em 2em;
- background: none;
- border: 2px solid #fff;
- font-size: 15px;
- color: #131313;
- cursor: pointer;
- position: relative;
- overflow: hidden;
- transition: all 0.3s;
- border-radius: 12px;
- background-color: #ecd448;
- font-weight: bolder;
- box-shadow: 0 2px 0 2px #000;
-}
+            padding: 1.1em 2em;
+            background: none;
+            border: 2px solid #fff;
+            font-size: 15px;
+            color: #131313;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            border-radius: 12px;
+            background-color: #ecd448;
+            font-weight: bolder;
+            box-shadow: 0 2px 0 2px #000;
+        }
 
-.btn:before {
- content: "";
- position: absolute;
- width: 100px;
- height: 120%;
- background-color: #ff6700;
- top: 50%;
- transform: skewX(30deg) translate(-150%, -50%);
- transition: all 0.5s;
-}
+        .btn:before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 120%;
+            background-color: #ff6700;
+            top: 50%;
+            transform: skewX(30deg) translate(-150%, -50%);
+            transition: all 0.5s;
+        }
 
-.btn:hover {
- background-color: #4cc9f0;
- color: #fff;
- box-shadow: 0 2px 0 2px #0d3b66;
-}
+        .btn:hover {
+            background-color: #4cc9f0;
+            color: #fff;
+            box-shadow: 0 2px 0 2px #0d3b66;
+        }
 
-.btn:hover::before {
- transform: skewX(30deg) translate(150%, -50%);
- transition-delay: 0.1s;
-}
+        .btn:hover::before {
+            transform: skewX(30deg) translate(150%, -50%);
+            transition-delay: 0.1s;
+        }
 
-.btn:active {
- transform: scale(0.9);
-}
+        .btn:active {
+            transform: scale(0.9);
+        }
     </style>
 </head>
 <body>

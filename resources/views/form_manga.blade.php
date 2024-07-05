@@ -20,7 +20,7 @@
         .container {
             width: 90%;
             max-width: 800px;
-            background: url('images/ojosmanga.png') no-repeat center center; /* Imagen de fondo */
+            background: url('images/ojosmanga2.png') no-repeat center center; /* Imagen de fondo */
             background-size: cover; /* Ajusta la imagen para cubrir el área */
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
