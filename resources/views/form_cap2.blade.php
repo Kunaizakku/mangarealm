@@ -227,10 +227,11 @@
             <div class="logo-container">
                 Formulario Categoría
             </div>
-            <form class="form" action="{{route('cat.insertar')}}" method="POST">
+            <form class="form" action="{{route('cap.insertar')}}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <input type="text" id="email" name="nom_cat" placeholder="Ingresa el nombre de la categoría" required>
+                    <input type="hidden" id="fk_manga" name="fk_manga" value="{{ $id }}">
+                    <input type="text" id="num_capitulo" name="num_capitulo" placeholder="Ingresa el numero del manga" required>
                 </div>
                 <button class="btn">Guardar</button>
                 </button>
@@ -239,19 +240,19 @@
 
         <div class="table-section">
             <div class="logo-container">
-                Categorías existentes
+                Capitulos ya registrados
             </div>
             <div class="table_cat">
                 <table>
                     <thead>
                         <tr>
-                            <th>Categorías existentes</th>
+                            <th>Capitulos existentes</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($datos_cat as $dato)
+                        @foreach ($datos_cap as $dato)
                             <tr>
-                                <td>{{ $dato->nom_cat }}</td>
+                                <td>{{ $dato->num_capitulo}}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -259,22 +260,6 @@
             </div>
         </div>
     </div>
-
-    {{-- @if ($errors->any())
-        <div class="error">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>Esta categoría ya existe</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    @if (session('success'))
-        <div class="success">
-            {{ session('success') }}
-        </div>
-    @endif --}}
 
 </body>
 </html>

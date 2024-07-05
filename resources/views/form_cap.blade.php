@@ -13,10 +13,10 @@
             <h1>Selecciona el manga a agregar el capitulo</h1>
         </div>
         <div class="container_card">
-            <a href="{{ route('cap.mostrarman') }}" style="text-decoration: none">
+            <a href="{{ route('man.mostrarMangaCap') }}" style="text-decoration: none">
 
             @foreach ($mangas as $manga)
-        <a href="{{ route('form_cap2', ['id' => $manga->id]) }}" style="text-decoration: none">
+        <a href="{{ route('cap.mostrar', ['id' => $manga->id]) }}" style="text-decoration: none">
                 <article class="article-wrapper">
                     <div class="rounded-lg container-project">
             <img class="img_form_cap" src="{{ asset('portadas/' . $manga->portada) }}" alt="Portada de {{ $manga->titulo }}">

@@ -71,6 +71,13 @@ class MangaController extends Controller
         return view('cat_manga', compact('mangaCat', 'categoriaId'));
     }
 
+    public function mostrarMangaCap()
+    {
+        $mangas = Manga::orderby('id', 'desc')->limit(20)->get();
+        return view('form_cap', compact('mangas'));
+    }
+
+
     /* Select * from */
     // function mostrar(){
     //     $datos_man=Manga::all();
