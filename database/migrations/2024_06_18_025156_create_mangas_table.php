@@ -18,8 +18,8 @@ return new class extends Migration
             $table->text('descripcion');
             $table->string('autor');
             $table->string('genero');
-            $table->string('estatus')->default('ongoing');
-            $table->string('portada'); //ongoing, completed, paused
+            $table->string('estatus')->default('ongoing'); //ongoing, completed, paused
+            $table->string('portada'); 
             $table->timestamps();
 
             $table->foreign('fk_categoria')->references('id')->on('categoria')->onDelete('cascade');

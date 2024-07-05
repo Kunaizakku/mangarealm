@@ -58,16 +58,19 @@ body{
   background-color: transparent;
   border: none;
   margin-top: 15px;
-  border-radius: 5em;
+  border-radius: 10%;
   width: 120px;
   height: 120px;
   margin-left: auto;
   margin-right: auto;
+  overflow: visible; /* Para ocultar cualquier parte de la imagen que sobresalga */
 }
 
 .pfp {
-  border-radius: 35em;
-  fill: #f65e22;
+  width: 50px;
+  height: 50px;
+  object-fit: cover; /* Ajusta la imagen para que cubra todo el contenedor */
+  border-radius: 50%; /* Mantiene la imagen redondeada */
 }
 
 .name {
@@ -392,6 +395,7 @@ body{
   margin: auto;
   justify-content: center;
 }
+
 
 
 /* form capitulo */

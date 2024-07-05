@@ -6,9 +6,9 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\MangaController;
 use App\Http\Controllers\CapituloController;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+
+Route::get('/', [MangaController::class, 'mostrarManga'])->name('welcome');
+
 
 Route::post('/registroUsuario', [registroController::class, 'insertar'])->name('usuario.insertar');
 Route::post('/registroCategoria', [CategoriaController::class, 'insertar'])->name('cat.insertar');
@@ -16,6 +16,7 @@ Route::post('/registroManga', [MangaController::class, 'insertar'])->name('man.i
 Route::get('/listadoCat', [CategoriaController::class,'mostrar'])->name('cat.mostrar');
 Route::get('/categorias', [Categoriacontroller::class,'ver'])->name('cat.listas');
 Route::post('/registroManga', [MangaController::class, 'insertar'])->name('man.insertar');
+Route::get('/categoria/{categoriaId}/mangas', [MangaController::class,'mangaCat'])->name('cat.manga');
 Route::get('/formManga', [MangaController::class,'create'])->name('man.create');
 Route::get('/Form_Cap', [CapituloController::class,'mostrarman'])->name('cap.mostrarman');
 
@@ -28,7 +29,6 @@ Route::get('/form_cap2/{id}', function ($id) {
 Route::get('/formularios', function () {return view('formularios');})->name('formularios');
 Route::get('/form_cat', function () {return view('form_cat');})->name('form_cat');
 Route::get('/mangas', function () {return view('manga');})->name('mangas');
-Route::get('/categoria de mangas', function () {return view('cat_manga');})->name('cat.manga');
 // Route::get('/form_manga', function () {return view('form_manga');})->name('form_manga');
 // // Route::get('/categoria', function () {return view('categoria');})->name('cat');
 
