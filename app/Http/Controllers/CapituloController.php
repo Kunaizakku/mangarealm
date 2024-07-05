@@ -3,33 +3,29 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Capitulo;
+use App\Models\Manga;
 
 class CapituloController extends Controller
 {
     /* inserción de datos */
-    const DEFAULT_ESTATUS = 1;
-
     public function insertar(Request $req)
     {
-        $manga = new Manga();
+        $capitulo = new Capitulo();
 
-        $manga->fk_manga = $req->fk_manga;
-        $manga->titulo = $req->titulo;
-        $manga->descripcion = $req->descripcion;
-        $manga->autor = $req->autor;
-        $manga->genero = $req->genero;
-        $manga->estatus = self::DEFAULT_ESTATUS;
+        $capitulo->fk_manga = $req->fk_manga;
+        $capitulo->num_capitulo = $req->num_capitulo;
 
-        $manga->save();
+        $capitulo->save();
 
         return redirect()->back();
 
     }
 
-    public function create()
+    public function mostrarman()
     {
-        $categorias = Categoria::all();
-        return view('form_manga', compact('categorias'));
+        $mangas = Manga::all();
+        return view('form_cap', compact('mangas'));
     }
 
 
