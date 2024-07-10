@@ -225,7 +225,7 @@
     <div class="container">
         <div class="form-section">
             <div class="logo-container">
-                Formulario Categoría
+                Formulario Capítulo
             </div>
             <form class="form" action="{{route('cap.insertar')}}" method="POST">
                 @csrf
@@ -240,19 +240,19 @@
 
         <div class="table-section">
             <div class="logo-container">
-                Capitulos ya registrados
+                Capítulos ya registrados
             </div>
             <div class="table_cat">
                 <table>
                     <thead>
                         <tr>
-                            <th>Capitulos existentes</th>
+                            <th>Capítulos</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($datos_cap as $dato)
                             <tr>
-                                <td>{{ $dato->num_capitulo}}</td>
+                                <td>Capítulo {{ $dato->num_capitulo}}</td>
                             </tr>
                         @endforeach
                     </tbody>

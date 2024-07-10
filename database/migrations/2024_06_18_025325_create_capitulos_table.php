@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('fk_manga');
             $table->integer('num_capitulo');
-            $table->string('slug')->unique();
             $table->timestamps();
 
             $table->foreign('fk_manga')->references('id')->on('mangas')->onDelete('cascade');

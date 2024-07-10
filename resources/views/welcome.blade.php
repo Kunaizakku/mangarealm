@@ -15,14 +15,14 @@
 
     <div class="container_card">
         @foreach ($manga as $dato)
-            <a href="{{ route('welcome', ['mangaId' => $dato->id]) }}">
+            <a href="{{ route('detalle_mangas', ['mangaId' => $dato->id]) }}">
                 <div class="flip-card">
                     <div class="flip-card-inner">
                         <div class="flip-card-front">
                             <div class="profile-image">
                                 <img clas="pfp" src="{{ asset('portadas/' . $dato->portada) }}" alt="">
                                 <div class="name">
-                                    {{ $dato->titulo }}
+                                    {{ $dato->titulo }} 
                                 </div>
                             </div>
                         </div>

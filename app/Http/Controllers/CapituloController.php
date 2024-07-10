@@ -7,7 +7,6 @@ use App\Models\Capitulo;
 class CapituloController extends Controller
 {
 
-    const DEFAULT_ESTATUS = 81;
     /* inserción de datos */
     public function insertar(Request $req)
     {
@@ -15,12 +14,10 @@ class CapituloController extends Controller
 
         $capitulo->fk_manga = $req->fk_manga;
         $capitulo->num_capitulo = $req->num_capitulo;
-        $capitulo->slug = self::DEFAULT_ESTATUS;
 
         $capitulo->save();
 
-        return redirect()->back();
-
+        return redirect()->route('form_pag', ['capituloId' => $capitulo->id]);
     }
 
 

@@ -6,6 +6,7 @@ use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use App\Models\Manga;
 use App\Models\Categoria;
+use App\Models\Capitulo;
 
 class MangaController extends Controller
 {
@@ -64,6 +65,12 @@ class MangaController extends Controller
         return view('welcome', compact('manga'));
     }
 
+    public function mostrar2()
+    {
+        $mangas = Manga::all();
+        return view('manga', compact('mangas'));
+    }
+
     public function mangaCat($categoriaId)
     {
         // Obtener todos los mangas de esa categoría
@@ -76,6 +83,21 @@ class MangaController extends Controller
         $mangas = Manga::orderby('id', 'desc')->limit(20)->get();
         return view('form_cap', compact('mangas'));
     }
+
+    public function detalle_mangas($mangaId)
+    {
+        $manga = Manga::find($mangaId);
+
+        if (!$manga) {
+            return redirect()->route('listado_mangas')->with('error', 'Manga no encontrado.');
+        }
+
+        $capitulos = Capitulo::where('fk_manga', $mangaId)->get();
+
+        return view('detallemanga', compact('manga', 'capitulos'));
+    }
+
+
 
 
     /* Select * from */
