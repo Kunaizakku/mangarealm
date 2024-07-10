@@ -18,8 +18,9 @@
                <div class="flip-card__inner">
                   <div class="flip-card__front">
                      <div class="title">Inicia Sesión</div>
-                     <form class="flip-card__form" action="">
-                        <input class="flip-card__input" name="email" placeholder="Correo" type="email">
+                     <form class="flip-card__form" action="{{route('usuario.login') }}" method="POST">
+                        @csrf
+                        <input class="flip-card__input" name="user" placeholder="Usuario" type="text">
                         <input class="flip-card__input" name="password" placeholder="Contraseña" type="password">
                         <button class="flip-card__btn">Entar!</button>
                      </form>
