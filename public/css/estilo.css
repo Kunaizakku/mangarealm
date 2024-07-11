@@ -10,14 +10,13 @@ body{
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    padding-top: 70px;
 }
 
 /* carta */
 .container_card {
   display: flex;
   flex-wrap: wrap;
-  width: 90%;
+  /* width: 90%; */
   margin: auto;
   justify-content: center;
 }
@@ -58,16 +57,19 @@ body{
   background-color: transparent;
   border: none;
   margin-top: 15px;
-  border-radius: 5em;
+  border-radius: 10%;
   width: 120px;
   height: 120px;
   margin-left: auto;
   margin-right: auto;
+  overflow: visible; /* Para ocultar cualquier parte de la imagen que sobresalga */
 }
 
 .pfp {
-  border-radius: 35em;
-  fill: #f65e22;
+  width: 50px;
+  height: 50px;
+  object-fit: cover; /* Ajusta la imagen para que cubra todo el contenedor */
+  border-radius: 50%; /* Mantiene la imagen redondeada */
 }
 
 .name {
@@ -394,6 +396,7 @@ body{
 }
 
 
+
 /* form capitulo */
 .article-wrapper {
   width: 250px;
@@ -531,6 +534,12 @@ body{
   display: flex; 
   flex-direction: column; 
   align-items: center;
+  margin: 0;
+}
+
+.cap-container{
+  display: flex; 
+  flex-direction: column; 
 }
 
 .svg_form_cap{
@@ -539,3 +548,4 @@ body{
   height: "2em"; 
   color: "black"
 }
+

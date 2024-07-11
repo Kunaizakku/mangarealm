@@ -9,6 +9,11 @@
     <title>Document</title>
 </head>
 <body>
+    @if (session('id'))
+    @else
+        <script>window.location = "{{ route('login') }}"</script>
+        
+    @endif
     <div class="navbar">
         <a href="{{ route('welcome') }}">
             <div class="logo">
@@ -20,10 +25,12 @@
         
         <div class="menu">
             <a href="{{ route('welcome') }}">Inicio</a>
-            <a href="{{ route('cat.listas') }}">Categorias</a>
+            <a href="{{ route('cat.listas') }}">Generos</a>
             <a href="{{ route('mangas') }}">Directorio</a>
+            @if (session('rol')==2)
             <a href="{{ route('formularios') }}">forms</a>
-            <a href="{{ route('login') }}">Cerrar Sesión</a>
+            @endif
+            <a href="{{ route('logout') }}">Cerrar Sesión</a>
         </div>
     </div>
 </body>

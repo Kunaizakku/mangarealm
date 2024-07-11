@@ -14,13 +14,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-        }
+{            min-height: 100vh;
+}        }
 
         .container {
             width: 90%;
             max-width: 800px;
-            background: url('images/ojosmanga.png') no-repeat center center; /* Imagen de fondo */
+            background: url('images/ojosmanga2.png') no-repeat center center; /* Imagen de fondo */
             background-size: cover; /* Ajusta la imagen para cubrir el área */
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -201,9 +201,10 @@
                         <input type="file" id="portada" name="portada" required>
 
                     </div>
+                    <button class="btn">Guardar</button></button>
                     </div>
 
-                    <input class="form-submit-btn" type="submit" value="Guardar">
+                    
                 </form>
             </div>
         </div>

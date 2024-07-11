@@ -8,146 +8,34 @@
 </head>
 <body>
     @include('menu')
-    <div class="form-cap-container">
-        <div class="h1_form_cap">
-            <h1>Selecciona el manga a agregar el capitulo</h1>
+    <div class="cap-container">
+        <div class="form-cap-container">
+            <div class="h1_form_cap">
+                <h1>Selecciona el manga a agregar el capitulo</h1>
+            </div>
         </div>
+
         <div class="container_card">
-            <a href="{{ route('welcome') }}" style="text-decoration: none">
-                <article class="article-wrapper">
-                    <div class="rounded-lg container-project">
-                        <img class="img_form_cap" src="images/fondo.png" alt="">
-                    </div>
-                    <div class="project-info">
-                        <div class="flex-pr">
-                            <div class="project-title text-nowrap">Project</div>
-                            <div class="project-hover">
-                                <svg class="svg_form_cap" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"><line y2="12" x2="19" y1="12" x1="5"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            @foreach ($mangas as $manga)
+                <a href="{{ route('cap.mostrar', ['id' => $manga->id]) }}" style="text-decoration: none">
+                    <article class="article-wrapper">
+                        <div class="rounded-lg container-project">
+                            <img class="img_form_cap" src="{{ asset('portadas/' . $manga->portada) }}" alt="Portada de {{ $manga->titulo }}">
+                        </div>
+                        <div class="project-info">
+                            <div class="flex-pr">
+                                <div class="project-title text-nowrap">{{ $manga->titulo }}</div>
+                                <div class="project-hover">
+                                    <svg class="svg_form_cap" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor">
+                                        <line y2="12" x2="19" y1="12" x1="5"></line>
+                                        <polyline points="12 5 19 12 12 19"></polyline>
+                                    </svg>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </article>
-            </a>
-            <article class="article-wrapper">
-                <div class="rounded-lg container-project">
-                    <img class="img_form_cap" src="images/fondo.png" alt="">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">Project</div>
-                        <div class="project-hover">
-                            <svg class="svg_form_cap" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"><line y2="12" x2="19" y1="12" x1="5"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="article-wrapper">
-                <div class="rounded-lg container-project">
-                    <img class="img_form_cap" src="images/fondo.png" alt="">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">Project</div>
-                        <div class="project-hover">
-                            <svg class="svg_form_cap" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"><line y2="12" x2="19" y1="12" x1="5"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="article-wrapper">
-                <div class="rounded-lg container-project">
-                    <img class="img_form_cap" src="images/fondo.png" alt="">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">Project</div>
-                        <div class="project-hover">
-                            <svg class="svg_form_cap" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"><line y2="12" x2="19" y1="12" x1="5"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="article-wrapper">
-                <div class="rounded-lg container-project">
-                    <img class="img_form_cap" src="images/fondo.png" alt="">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">Project</div>
-                        <div class="project-hover">
-                            <svg class="svg_form_cap" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"><line y2="12" x2="19" y1="12" x1="5"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="article-wrapper">
-                <div class="rounded-lg container-project">
-                    <img class="img_form_cap" src="images/fondo.png" alt="">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">Project</div>
-                        <div class="project-hover">
-                            <svg class="svg_form_cap" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"><line y2="12" x2="19" y1="12" x1="5"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="article-wrapper">
-                <div class="rounded-lg container-project">
-                    <img class="img_form_cap" src="images/fondo.png" alt="">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">Project</div>
-                        <div class="project-hover">
-                            <svg class="svg_form_cap" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"><line y2="12" x2="19" y1="12" x1="5"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="article-wrapper">
-                <div class="rounded-lg container-project">
-                    <img class="img_form_cap" src="images/fondo.png" alt="">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">Project</div>
-                        <div class="project-hover">
-                            <svg class="svg_form_cap" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"><line y2="12" x2="19" y1="12" x1="5"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="article-wrapper">
-                <div class="rounded-lg container-project">
-                    <img class="img_form_cap" src="images/fondo.png" alt="">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">Project</div>
-                        <div class="project-hover">
-                            <svg class="svg_form_cap" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"><line y2="12" x2="19" y1="12" x1="5"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <article class="article-wrapper">
-                <div class="rounded-lg container-project">
-                    <img class="img_form_cap" src="images/fondo.png" alt="">
-                </div>
-                <div class="project-info">
-                    <div class="flex-pr">
-                        <div class="project-title text-nowrap">Project</div>
-                        <div class="project-hover">
-                            <svg class="svg_form_cap" xmlns="http://www.w3.org/2000/svg" stroke-linejoin="round" stroke-linecap="round" viewBox="0 0 24 24" stroke-width="2" fill="none" stroke="currentColor"><line y2="12" x2="19" y1="12" x1="5"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            
-            
-
+                    </article>
+                </a>
+            @endforeach
         </div>
     </div>
 </body>

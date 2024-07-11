@@ -36,16 +36,16 @@
         }
 
         .form-section {
-            background: url('images/ace2.png') no-repeat bottom right;
+            background: url('images/ace.png') no-repeat bottom right;
             background-size: 100% 150%;
         }
 
         .table-section {
-            background: url('images/ojosmanga2.png') no-repeat bottom right;
+            background: url('images/ojosmanga.png') no-repeat bottom right;
             background-size: 100% 150%; /* Ajusta el tamaño para cubrir toda el área */
         }
 
-       
+
         .logo-container {
             font-size: 2em;
             margin-bottom: 20px;
@@ -176,81 +176,83 @@
             opacity: 1;
         }
         .btn {
-            padding: 1.1em 2em;
-            background: none;
-            border: 2px solid #fff;
-            font-size: 15px;
-            color: #131313;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-            border-radius: 12px;
-            background-color: #ecd448;
-            font-weight: bolder;
-            box-shadow: 0 2px 0 2px #000;
-        }
+ padding: 1.1em 2em;
+ background: none;
+ border: 2px solid #fff;
+ font-size: 15px;
+ color: #131313;
+ cursor: pointer;
+ position: relative;
+ overflow: hidden;
+ transition: all 0.3s;
+ border-radius: 12px;
+ background-color: #ecd448;
+ font-weight: bolder;
+ box-shadow: 0 2px 0 2px #000;
+}
 
-        .btn:before {
-            content: "";
-            position: absolute;
-            width: 100px;
-            height: 120%;
-            background-color: #ff6700;
-            top: 50%;
-            transform: skewX(30deg) translate(-150%, -50%);
-            transition: all 0.5s;
-        }
+.btn:before {
+ content: "";
+ position: absolute;
+ width: 100px;
+ height: 120%;
+ background-color: #ff6700;
+ top: 50%;
+ transform: skewX(30deg) translate(-150%, -50%);
+ transition: all 0.5s;
+}
 
-        .btn:hover {
-            background-color: #4cc9f0;
-            color: #fff;
-            box-shadow: 0 2px 0 2px #0d3b66;
-        }
+.btn:hover {
+ background-color: #4cc9f0;
+ color: #fff;
+ box-shadow: 0 2px 0 2px #0d3b66;
+}
 
-        .btn:hover::before {
-            transform: skewX(30deg) translate(150%, -50%);
-            transition-delay: 0.1s;
-        }
+.btn:hover::before {
+ transform: skewX(30deg) translate(150%, -50%);
+ transition-delay: 0.1s;
+}
 
-        .btn:active {
-            transform: scale(0.9);
-        }
+.btn:active {
+ transform: scale(0.9);
+}
     </style>
 </head>
 <body>
-    
+
     @include('menu')
 
     <div class="container">
         <div class="form-section">
             <div class="logo-container">
-                Formulario Categoría
+                Formulario Capítulo
             </div>
-            <form class="form" action="{{route('cat.insertar')}}" method="POST">
+            <form class="form" action="{{route('cap.insertar')}}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <input type="text" id="email" name="nom_cat" placeholder="Ingresa el nombre de la categoría" required>
+                    <input type="hidden" id="fk_manga" name="fk_manga" value="{{ $id }}">
+                    <input type="text" id="num_capitulo" name="num_capitulo" placeholder="Ingresa el numero del manga" required>
                 </div>
                 <button class="btn">Guardar</button>
+                </button>
             </form>
         </div>
 
         <div class="table-section">
             <div class="logo-container">
-                Categorías existentes
+                Capítulos ya registrados
             </div>
             <div class="table_cat">
                 <table>
                     <thead>
                         <tr>
-                            <th>Categorías existentes</th>
+                            <th>Capítulos</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($datos_cat as $dato)
+                        @foreach ($datos_cap as $dato)
                             <tr>
-                                <td>{{ $dato->nom_cat }}</td>
+                                <td>Capítulo {{ $dato->num_capitulo}}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -258,22 +260,6 @@
             </div>
         </div>
     </div>
-
-    @if ($errors->any())
-        <div class="error">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>Esta categoría ya existe</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-    @if (session('success'))
-        <div class="success">
-            {{ session('success') }}
-        </div>
-    @endif
 
 </body>
 </html>

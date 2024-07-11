@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('capitulos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('fk_manga');
-            $table->string('titulo');
             $table->integer('num_capitulo');
-            $table->string('slug')->unique();
             $table->timestamps();
 
             $table->foreign('fk_manga')->references('id')->on('mangas')->onDelete('cascade');

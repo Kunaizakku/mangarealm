@@ -13,7 +13,7 @@
     <div class="contenedor-cards">
 
         @foreach ($cats as $dato)
-            <a style="text-decoration: none" href="{{ route('cat.manga') }}">
+            <a style="text-decoration: none" href="{{ route('cat.manga', ['categoriaId' => $dato->id]) }}">
                 <div class="card-manga">
                     <div class="card-manga__content">
                         <h1 style="margin: auto">{{ $dato->nom_cat }}</h1>
