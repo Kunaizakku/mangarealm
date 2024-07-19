@@ -17,7 +17,7 @@
     <div class="navbar">
         <a href="{{ route('welcome') }}">
             <div class="logo">
-                <img src="{{ asset('images/portal3.gif
+                <img src="{{ asset('images/portal.png
                 ') }}" alt="Logo" style="height: 35px; vertical-align: middle;">
                 M A N G A R E A L M
             </div>
