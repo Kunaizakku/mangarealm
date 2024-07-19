@@ -45,7 +45,6 @@
             background-size: 100% 150%; /* Ajusta el tamaño para cubrir toda el área */
         }
 
-
         .logo-container {
             font-size: 2em;
             margin-bottom: 20px;
@@ -53,7 +52,7 @@
             color: #333;
             font-weight: bold;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            background-color: rgba(255, 255, 255, 0.7); /* Fondo blanco semitransparente */
+            background-color: rgba(255, 255, 255, 10); /* Fondo blanco semitransparente */
             padding: 10px;
             border-radius: 5px;
             display: flex;
@@ -175,51 +174,51 @@
             height: 540px;
             opacity: 1;
         }
+
         .btn {
- padding: 1.1em 2em;
- background: none;
- border: 2px solid #fff;
- font-size: 15px;
- color: #131313;
- cursor: pointer;
- position: relative;
- overflow: hidden;
- transition: all 0.3s;
- border-radius: 12px;
- background-color: #ecd448;
- font-weight: bolder;
- box-shadow: 0 2px 0 2px #000;
-}
+            padding: 1.1em 2em;
+            background: none;
+            border: 2px solid #fff;
+            font-size: 15px;
+            color: #131313;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s;
+            border-radius: 12px;
+            background-color: #ecd448;
+            font-weight: bolder;
+            box-shadow: 0 2px 0 2px #000;
+        }
 
-.btn:before {
- content: "";
- position: absolute;
- width: 100px;
- height: 120%;
- background-color: #ff6700;
- top: 50%;
- transform: skewX(30deg) translate(-150%, -50%);
- transition: all 0.5s;
-}
+        .btn:before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 120%;
+            background-color: #ff6700;
+            top: 50%;
+            transform: skewX(30deg) translate(-150%, -50%);
+            transition: all 0.5s;
+        }
 
-.btn:hover {
- background-color: #4cc9f0;
- color: #fff;
- box-shadow: 0 2px 0 2px #0d3b66;
-}
+        .btn:hover {
+            background-color: #4cc9f0;
+            color: #fff;
+            box-shadow: 0 2px 0 2px #0d3b66;
+        }
 
-.btn:hover::before {
- transform: skewX(30deg) translate(150%, -50%);
- transition-delay: 0.1s;
-}
+        .btn:hover::before {
+            transform: skewX(30deg) translate(150%, -50%);
+            transition-delay: 0.1s;
+        }
 
-.btn:active {
- transform: scale(0.9);
-}
+        .btn:active {
+            transform: scale(0.9);
+        }
     </style>
 </head>
 <body>
-
     @include('menu')
 
     <div class="container">
@@ -234,7 +233,6 @@
                     <input type="text" id="num_capitulo" name="num_capitulo" placeholder="Ingresa el numero del manga" required>
                 </div>
                 <button class="btn">Guardar</button>
-                </button>
             </form>
         </div>
 
@@ -252,7 +250,7 @@
                     <tbody>
                         @foreach ($datos_cap as $dato)
                             <tr>
-                                <td>Capítulo {{ $dato->num_capitulo}}</td>
+                                <td>Capítulo {{ $dato->num_capitulo }}</td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -260,6 +258,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>
