@@ -11,7 +11,6 @@ use App\Models\Capitulo;
 class MangaController extends Controller
 {
     /* inserción de datos */
-    const DEFAULT_ESTATUS = 1;
 
     public function insertar(Request $req)
     {
@@ -43,7 +42,6 @@ class MangaController extends Controller
         $manga->descripcion = $req->descripcion;
         $manga->autor = $req->autor;
         $manga->genero = $req->genero;
-        $manga->estatus = self::DEFAULT_ESTATUS;
         $manga->portada = $path; // Guardar la ruta de la imagen
 
         $manga->save();
