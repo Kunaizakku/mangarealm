@@ -21,8 +21,9 @@ class CapituloController extends Controller
     }
 
 
-    function mostrar($id){
+    function mostrar($id)
+    {
         $datos_cap = Capitulo::where('fk_manga', $id)->get();
     return view("form_cap2", compact("datos_cap", "id"));
-   }
+    }
 }
