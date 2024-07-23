@@ -7,11 +7,19 @@
     
     <title>Hola tonotos</title>
     <link rel="stylesheet" href="app.css">
-    <style>    
-    </style>
 </head>
 <body>
     @include('menu')
+    @if(session('success'))
+          <script>
+              Swal.fire({
+                  title: 'Éxito',
+                  text: '{{ session('success') }}',
+                  icon: 'success',
+                  confirmButtonText: 'Ok'
+              });
+          </script>
+      @endif
 
     <div class="container_card">
         @foreach ($manga as $dato)

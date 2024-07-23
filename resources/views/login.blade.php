@@ -7,10 +7,56 @@
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="card-switch">
+   <div class="wrapper">
+      <!-- Login form here -->
+      @if(session('success'))
+          <script>
+              Swal.fire({
+                  title: 'Éxito',
+                  text: '{{ session('success') }}',
+                  icon: 'success',
+                  confirmButtonText: 'Ok'
+              });
+          </script>
+      @endif
+
+      @if(session('error_credentials'))
+          <script>
+              Swal.fire({
+                  title: 'Error',
+                  text: '{{ session('error_credentials') }}',
+                  icon: 'error',
+                  confirmButtonText: 'Ok'
+              });
+          </script>
+      @endif
+
+      @if(session('error_retry'))
+          <script>
+              Swal.fire({
+                  title: 'Intento Fallido',
+                  text: '{{ session('error_retry') }}',
+                  icon: 'warning',
+                  confirmButtonText: 'Ok'
+              });
+          </script>
+      @endif
+
+      @if(session('error_status'))
+          <script>
+              Swal.fire({
+                  title: 'Cuenta Desactivada',
+                  text: '{{ session('error_status') }}',
+                  icon: 'warning',
+                  confirmButtonText: 'Ok'
+              });
+          </script>
+      @endif
+      <div class="wrapper">
+         <div class="card-switch">
             <label class="switch">
                <input type="checkbox" class="toggle">
                <span class="slider"></span>
@@ -37,7 +83,8 @@
                   </div>
                </div>
             </label>
-        </div>   
+         </div>   
+      </div>
    </div>
 </body>
 </html>

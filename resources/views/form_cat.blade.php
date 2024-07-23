@@ -221,6 +221,15 @@
 <body>
     
     @include('menu')
+    @if(session('success'))
+            <script>
+                Swal.fire({
+                    title: '¡Éxito!',
+                    text: '{{ session('success') }}',
+                    icon: 'success'
+                });
+            </script>
+        @endif
 
     <div class="container">
         <div class="form-section">
@@ -266,12 +275,6 @@
                     <li>Esta categoría ya existe</li>
                 @endforeach
             </ul>
-        </div>
-    @endif
-
-    @if (session('success'))
-        <div class="success">
-            {{ session('success') }}
         </div>
     @endif
 
