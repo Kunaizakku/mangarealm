@@ -44,21 +44,74 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
     </style>
 </head>
 <body>
     @include('menu')
 
     <div class="space"></div>
+    <div class="title-container">
+        <div class="button-container">
+            <a class="button" href="{{ route('detalle_mangas', ['mangaId' => $mangaId]) }}">
+                <span class="button_top">
+                    Volver a la lista de episodios
+                </span>
+            </a>
+        </div>
+    </div>
 
     <div class="title-container">
+        
+        <div class="button-container">
+            @if ($prevCapitulo)
+                <a class="button" href="{{ route('detallepagina', ['capituloId' => $prevCapitulo->id]) }}">
+                    <span class="button_top">
+                        Capítulo anterior
+                    </span>
+                </a>
+            @else
+                <span class="placeholder"></span>
+            @endif
+        </div>
+
         <h1>Capítulo {{ $num_capitulo }}</h1>
+
+        <div class="button-container">
+            @if ($nextCapitulo)
+                <a class="button" href="{{ route('detallepagina', ['capituloId' => $nextCapitulo->id]) }}">
+                    <span class="button_top">
+                        Capítulo Siguiente
+                    </span>
+                </a>
+            @else
+                <span class="placeholder"></span>
+            @endif
+        </div>
     </div>
 
     <div class="image-container">
         @foreach ($pag_cap as $cap)
             <img src="{{ asset($cap->imagen) }}" alt="capitulo">
         @endforeach
+    </div>
+
+    <div class="button-container">
+        @if ($prevCapitulo)
+            <a class="button" href="{{ route('detallepagina', ['capituloId' => $prevCapitulo->id]) }}">
+                <span class="button_top">
+                    Capítulo anterior
+                </span>
+            </a>
+        @endif
+
+        @if ($nextCapitulo)
+            <a class="button" href="{{ route('detallepagina', ['capituloId' => $nextCapitulo->id]) }}">
+                <span class="button_top">
+                    Capítulo Siguiente
+                </span>
+            </a>
+        @endif
     </div>
 </body>
 </html>

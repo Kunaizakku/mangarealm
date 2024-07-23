@@ -71,11 +71,23 @@ class PaginaController extends Controller
         // Obtener todos los mangas de esa categoría
         $pag_cap = Pagina::where('fk_capitulo', $capituloId)->get();
 
-        // Obtener el número de capítulo desde la base de datos
+        // Obtener el capítulo y manga desde la base de datos
         $capitulo = Capitulo::find($capituloId);
         $num_capitulo = $capitulo ? $capitulo->num_capitulo : null;
+        $mangaId = $capitulo ? $capitulo->fk_manga : null;
 
-        return view('detallepagina', compact('pag_cap', 'num_capitulo'));
+        // Obtener el capítulo siguiente y anterior si existen
+        $prevCapitulo = Capitulo::where('fk_manga', $mangaId)
+                                ->where('num_capitulo', '<', $num_capitulo)
+                                ->orderBy('num_capitulo', 'desc')
+                                ->first();
+
+        $nextCapitulo = Capitulo::where('fk_manga', $mangaId)
+                                ->where('num_capitulo', '>', $num_capitulo)
+                                ->orderBy('num_capitulo', 'asc')
+                                ->first();
+
+        return view('detallepagina', compact('pag_cap', 'num_capitulo', 'mangaId', 'prevCapitulo', 'nextCapitulo'));
     }
 
 }
