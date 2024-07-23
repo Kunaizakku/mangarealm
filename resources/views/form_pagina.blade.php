@@ -69,27 +69,42 @@
         }
     </style>
     <script>
-        var nextIndex = 1; // Inicializar el índice para el próximo conjunto de campos
-        function addFields() {
-            var container = document.getElementById("fields-container");
-            var newFieldGroup = document.createElement("div");
+        document.addEventListener('DOMContentLoaded', function() {
+            var nextIndex = 1; // Inicializar el índice para el próximo conjunto de campos
 
-            newFieldGroup.innerHTML = `
-                <div class="field-group">
+            function updatePageNumbers() {
+                var pageInputs = document.querySelectorAll('input[name^="paginas["][name$="[num_pagina]"]');
+                pageInputs.forEach((input, index) => {
+                    input.value = index + 1;
+                });
+            }
+
+            function addFields() {
+                var container = document.getElementById("fields-container");
+                var newFieldGroup = document.createElement("div");
+                newFieldGroup.className = 'field-group';
+
+                newFieldGroup.innerHTML = `
                     <input type="hidden" name="paginas[${nextIndex}][fk_capitulo]" value="{{ $capituloId }}" required>
-                    <input type="number" name="paginas[${nextIndex}][num_pagina]" placeholder="Número de página" required>
+                    <input type="hidden" name="paginas[${nextIndex}][num_pagina]" placeholder="Número de página" required readonly>
                     <input type="file" name="paginas[${nextIndex}][imagen]" accept="image/*" required>
                     <button type="button" onclick="removeField(this)">Eliminar</button>
-                </div>
-            `;
+                `;
 
-            container.appendChild(newFieldGroup);
-            nextIndex++; // Incrementar el índice para el próximo conjunto de campos
-        }
+                container.appendChild(newFieldGroup);
+                nextIndex++; // Incrementar el índice para el próximo conjunto de campos
+                updatePageNumbers();
+            }
 
-        function removeField(button) {
-            button.parentElement.remove();
-        }
+            function removeField(button) {
+                button.parentElement.remove();
+                updatePageNumbers();
+            }
+
+            document.getElementById('add-field-button').addEventListener('click', addFields);
+
+            window.removeField = removeField; // Hacer la función globalmente accesible
+        });
     </script>
 </head>
 <body>
@@ -100,14 +115,12 @@
             <div id="fields-container">
                 <div class="field-group">
                     <input type="hidden" name="paginas[0][fk_capitulo]" value="{{ $capituloId }}" required>
-                    <input type="number" name="paginas[0][num_pagina]" placeholder="Número de página" required>
+                    <input type="hidden" name="paginas[0][num_pagina]" placeholder="Número de página" value="1" readonly required>
                     <input type="file" name="paginas[0][imagen]" accept="image/*" required>
                     <button type="button" onclick="removeField(this)">Eliminar</button>
-                    
                 </div>
             </div>
-            <button type="button" onclick="addFields()">Agregar más</button>
-
+            <button type="button" id="add-field-button">Agregar más</button>
             <button type="submit">Enviar</button>
         </form>
     </div>

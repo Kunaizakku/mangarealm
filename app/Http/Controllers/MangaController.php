@@ -69,6 +69,12 @@ class MangaController extends Controller
         return view('manga', compact('mangas'));
     }
 
+    public function mostrar_admin()
+    {
+        $manga = Manga::all();
+        return view('lista_man', compact('manga'));
+    }
+
     public function mangaCat($categoriaId)
     {
         // Obtener todos los mangas de esa categoría
@@ -93,6 +99,19 @@ class MangaController extends Controller
         $capitulos = Capitulo::where('fk_manga', $mangaId)->get();
 
         return view('detallemanga', compact('manga', 'capitulos'));
+    }
+
+    public function actualizarEstatus($id, $estatus)
+    {
+        // Encuentra el manga por su ID
+        $manga = Manga::findOrFail($id);
+        
+        // Actualiza el estatus del manga
+        $manga->estatus = $estatus;
+        $manga->save();
+        
+        // Redirige de vuelta a la página de manga con un mensaje de éxito
+        return redirect()->back()->with('success', 'Estatus actualizado correctamente');
     }
 
 

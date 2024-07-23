@@ -50,11 +50,18 @@ Route::get('/Form_cap', function () {return view('form_cap');})->name('form_cap'
 // Route::get('/form_cap2/{id}', function ($id) {
 //     return view('form_cap2', ['id' => $id]);})->name('form_cap2');
 Route::get('/formularios', function () {return view('formularios');})->name('formularios');
+Route::get('/admin_manga', function () {return view('admin_manga');})->name('admin_manga');
 Route::get('/form_cat', function () {return view('form_cat');})->name('form_cat');
 // Route::get('/form_manga', function () {return view('form_manga');})->name('form_manga');
 // // Route::get('/categoria', function () {return view('categoria');})->name('cat');
 
 
 Route::get('/listadoMan', [MangaController::class,'mostrar'])->name('man.mostrar');
+Route::get('/listaMan', [MangaController::class,'mostrar_admin'])->name('man.admin');
+Route::get('/listaUSer', [registroController::class,'mostrar_admin'])->name('user.admin');
+Route::get('/man.act/{id}/estatus/{estatus}', [MangaController::class,'actualizarEstatus'])->name('man.act');
+Route::get('/user.act/{id}/rol/{rol}', [registroController::class,'actualizarRol'])->name('user.act');
+Route::get('/user.act.est/{id}/estatus/{estatus}', [registroController::class,'actualizarEstatus'])->name('user.act.est');
+
 
 // Route::get('/categoria', function () {return view('categoria');})->name('cat');

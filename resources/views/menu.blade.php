@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset('css/estilo.css') }}">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-default/default.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     @if (session('id'))
@@ -17,7 +19,7 @@
     <div class="navbar">
         <a href="{{ route('welcome') }}">
             <div class="logo">
-                <img src="{{ asset('images/portal.png
+                <img class="img_logo" src="{{ asset('images/portal.png
                 ') }}" alt="Logo" style="height: 35px; vertical-align: middle;">
                 M A N G A R E A L M
             </div>
@@ -28,7 +30,8 @@
             <a href="{{ route('cat.listas') }}">Generos</a>
             <a href="{{ route('mangas') }}">Directorio</a>
             @if (session('rol')==2)
-            <a href="{{ route('formularios') }}">forms</a>
+            <a href="{{ route('formularios') }}">Formularios</a>
+            <a href="{{ route('admin_manga') }}">Administrador</a>
             @endif
             <a href="{{ route('logout') }}">Cerrar Sesión</a>
         </div>

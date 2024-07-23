@@ -10,28 +10,30 @@
 
     @include('menu')
 
-    <div class="card">
-        <div class="card-details">
-            <p class="text-title">Form Cat</p>
-            <p class="text-body">Hola Tonotos</p>
+    <div class="containerform">
+        <div class="card">
+            <div class="card-details">
+                <p style="text-align: center" class="text-title">Formulario Categoria</p>
+                <p class="text-body">Hola Tonotos</p>
+            </div>
+            <a type="button" href="{{ route('cat.mostrar') }}" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
         </div>
-        <a type="button" href="{{ route('cat.mostrar') }}" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
-    </div>
-    <div class="card">
-        <div class="card-details">
-            <p class="text-title">Form Manga</p>
-            <p class="text-body">Hola Tonotos</p>
+        <div class="card">
+            <div class="card-details">
+                <p style="text-align: center" class="text-title">Formulario Manga</p>
+                <p class="text-body">Hola Tonotos</p>
+            </div>
+            <a type="button" href="{{ route('man.create') }}" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
+            <a type="button" href="{{ route('man.mostrar') }}" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
         </div>
-        <a type="button" href="{{ route('man.create') }}" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
-        <a type="button" href="{{ route('man.mostrar') }}" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
-    </div>
-    <div class="card">
-        <div class="card-details">
-            <p class="text-title">Form Episodio</p>
-            <p class="text-body">Hola Tonotos</p>
+        <div class="card">
+            <div class="card-details">
+                <p style="text-align: center" class="text-title">Formulario Episodio</p>
+                <p class="text-body">Hola Tonotos</p>
+            </div>
+            <a type="button" href="{{ route('form_cap') }}" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
+            <a type="button" href="{{ route('man.mostrarMangaCap') }}" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
         </div>
-        <a type="button" href="{{ route('form_cap') }}" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
-        <a type="button" href="{{ route('man.mostrarMangaCap') }}" class="card-button" style="text-decoration: none; color: initial;">Ingresar</a>
     </div>
 
 </body>

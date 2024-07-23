@@ -49,6 +49,8 @@
 <body>
     @include('menu')
 
+    <div class="space"></div>
+
     <div class="title-container">
         <h1>Capítulo {{ $num_capitulo }}</h1>
     </div>
