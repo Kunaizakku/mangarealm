@@ -97,6 +97,7 @@ class MangaController extends Controller
         }
 
         $capitulos = Capitulo::where('fk_manga', $mangaId)->get();
+        
 
         return view('detallemanga', compact('manga', 'capitulos'));
     }

@@ -4,96 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        #main-header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding-top: 30px;
-            padding-bottom: 30px;
-        }
-        #main-header h1 {
-            margin: 0;
-        }
-        #manga-info {
-            background: #fff;
-            padding: 20px;
-            margin-top: 20px;
-            display: flex;
-        }
-        #manga-info img {
-            max-width: 200px;
-            margin-right: 20px;
-        }
-        #manga-info .details {
-            flex: 1;
-        }
-        #manga-info .details h2, 
-        #manga-info .details p {
-            margin: 0;
-            margin-bottom: 10px;
-        }
-        #chapters {
-            background: #fff;
-            padding: 20px;
-            margin-top: 20px;
-        }
-        #chapters h3 {
-            margin: 0;
-            margin-bottom: 10px;
-        }
-        #chapters a {
-            display: block;
-            color: #333;
-            text-decoration: none;
-            margin-bottom: 5px;
-            padding: 10px;
-            background: #f4f4f4;
-            border-radius: 5px;
-        }
-        #chapters a:hover {
-            background: #ddd;
-        }
-    </style>
+    <title>{{ $manga->titulo }}</title>
 </head>
 <body>
-    <header id="main-header">
-        <h1>{{ $manga->titulo }}</h1>
-    </header>
-    @include('menu')
-    <div class="container">
-        @if ($manga)
-            <div id="manga-info">
-                <img src="{{ asset('portadas/' . $manga->portada) }}" alt="manga">
-                <div class="details">
-                    <h2>{{ $manga->descripcion }}</h2>
+    <div class="containermanga">
+        
+        @include('menu')
+        <div class="containerq">
+            @if ($manga)
+                <div id="manga-info">
+                    
+                    <div class="nha">
+                        <img class="a" src="{{ asset('portadas/' . $manga->portada) }}" alt="manga" class="manga-cover">
+                        <div class="e">
+                            <div id="main-header">
+                                <h1>{{ $manga->titulo }}</h1>
+                            </div>
+                            <div class="o">
+                                <div class="details u">
+                                    <h3>Autor: {{ $manga->autor }}</h3>
+                                </div>
+                                <div class="details u">
+                                    <h3>Genero: {{ $manga->genero }}</h3>
+                                </div>
+                                <div class="details u">
+                                    <h3>Estado: {{ $manga->estatus }}</h3>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h2>Sinopsis</h2>
+                                <p>{{ $manga->descripcion }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div id="chapters">
-                <h3>Capítulos:</h3>
-                @if ($capitulos->isEmpty())
-                    <p>No hay capítulos disponibles.</p>
-                @else
-                    @foreach ($capitulos as $capitulo)
-                        <a href="{{ route('detallepagina', ['capituloId' => $capitulo->id]) }}">Capítulo {{ $capitulo->num_capitulo }}</a>
-                    @endforeach
-                @endif
-            </div>
-        @else
-            <p>No se encontró el manga.</p>
-        @endif
+                <div id="chapters">
+                    <h3>Capítulos:</h3>
+                    @if ($capitulos->isEmpty())
+                        <a class="chapter-link">
+                            No hay capítulos disponibles.
+                        </a>
+                    @else
+                        @foreach ($capitulos as $capitulo)
+                            <a href="{{ route('detallepagina', ['capituloId' => $capitulo->id]) }}" class="chapter-link">
+                                Capítulo {{ $capitulo->num_capitulo }}
+                            </a>
+                        @endforeach
+                    @endif
+                </div>
+            @else
+                <p>No se encontró el manga.</p>
+            @endif
+        </div>
     </div>
 </body>
 </html>
