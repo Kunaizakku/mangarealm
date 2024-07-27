@@ -20,7 +20,7 @@ class PaginaController extends Controller
             $data = $request->validate([
                 'paginas.*.fk_capitulo' => 'required|exists:capitulos,id',
                 'paginas.*.num_pagina' => 'required|integer',
-                'paginas.*.imagen' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'paginas.*.imagen' => 'required|mimes:jpeg,png,jpg,gif,svg,pdf|max:81920',
             ]);
 
             foreach ($data['paginas'] as $paginaData) {

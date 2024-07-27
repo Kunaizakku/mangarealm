@@ -10,6 +10,7 @@
 </head>
 <body>
     @include('menu')
+    <div class="space"></div>
     @if(session('success'))
           <script>
               Swal.fire({

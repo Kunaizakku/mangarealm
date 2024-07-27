@@ -109,6 +109,7 @@
 </head>
 <body>
     @include('menu')
+    <div class="space"></div>
     <div class="container">
         <form action="{{ route('submit_form') }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -116,7 +117,7 @@
                 <div class="field-group">
                     <input type="hidden" name="paginas[0][fk_capitulo]" value="{{ $capituloId }}" required>
                     <input type="hidden" name="paginas[0][num_pagina]" placeholder="Número de página" value="1" readonly required>
-                    <input type="file" name="paginas[0][imagen]" accept="image/*" required>
+                    <input type="file" name="paginas[0][imagen]" accept="image/*,.pdf" required>
                     <button type="button" onclick="removeField(this)">Eliminar</button>
                 </div>
             </div>
