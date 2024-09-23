@@ -96,7 +96,7 @@
                 $extension = pathinfo($cap->imagen, PATHINFO_EXTENSION);
             @endphp
             @if ($extension == 'pdf')
-                <embed src="{{ asset($cap->imagen) }}" type="application/pdf" width="700" height="900" />
+                <embed src="{{ asset($cap->imagen) }}" type="application/pdf" width="1000" height="1100" />
             @else
                 <img src="{{ asset($cap->imagen) }}" alt="capitulo">
             @endif
