@@ -25,43 +25,43 @@ class registroController extends Controller
     }
 
     public function login(Request $request)
-{
-    $nombre = $request->input('user');
-    $contraseña = $request->input('password');
+    {
+        $nombre = $request->input('user');
+        $contraseña = $request->input('password');
 
-    $usuario = $this->buscar($nombre, $contraseña);
+        $usuario = $this->buscar($nombre, $contraseña);
 
-    if ($usuario) {
-        // Verificar si el estatus del usuario es 0
-        if ($usuario->estatus == 0) {
-            // Redirigir al usuario con un mensaje de cuenta desactivada
+        if ($usuario) {
+            // Verificar si el estatus del usuario es 0
+            if ($usuario->estatus == 0) {
+                // Redirigir al usuario con un mensaje de cuenta desactivada
+                return redirect()->to('/iniciarsesion')
+                    ->with('error_status', 'Tu cuenta está desactivada. Contacta al administrador.');
+            }
+
+            // Establecer las variables de sesión
+            session([
+                'id' => $usuario->id,
+                'nombre' => $usuario->username,
+                'contraseña' => $contraseña,
+                'rol' => $usuario->rol
+            ]);
+
+            // Redirigir al usuario con un mensaje de bienvenida basado en el rol
+            if ($usuario->rol == 1) {
+                return redirect()->to('/')->with('success', '¡Bienvenido(a)!');
+            } elseif ($usuario->rol == 2) {
+                return redirect()->to('/')->with('success', 'Bienvenido(a): ' . $usuario->username);
+            }
+            
+        } else {
+            // Redirigir al usuario con un mensaje de error
             return redirect()->to('/iniciarsesion')
-                ->with('error_status', 'Tu cuenta está desactivada. Contacta al administrador.');
+                ->with('error_credentials', 'Usuario o contraseña incorrectos')
+                ->with('error_retry', 'Introduzca sus datos de nuevo')
+                ->with('use_js_alerts', true);
         }
-
-        // Establecer las variables de sesión
-        session([
-            'id' => $usuario->id,
-            'nombre' => $usuario->username,
-            'contraseña' => $contraseña,
-            'rol' => $usuario->rol
-        ]);
-
-        // Redirigir al usuario con un mensaje de bienvenida basado en el rol
-        if ($usuario->rol == 1) {
-            return redirect()->to('/')->with('success', '¡Bienvenido(a)!');
-        } elseif ($usuario->rol == 2) {
-            return redirect()->to('/')->with('success', 'Bienvenido(a): ' . $usuario->username);
-        }
-        
-    } else {
-        // Redirigir al usuario con un mensaje de error
-        return redirect()->to('/iniciarsesion')
-            ->with('error_credentials', 'Usuario o contraseña incorrectos')
-            ->with('error_retry', 'Introduzca sus datos de nuevo')
-            ->with('use_js_alerts', true);
     }
-}
 
 
     public function logout() {

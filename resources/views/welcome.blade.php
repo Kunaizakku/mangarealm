@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>Hola tonotos</title>
+    <title>Bienvenido</title>
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
     @include('menu')
+    <div class="space"></div>
     @if(session('success'))
           <script>
               Swal.fire({

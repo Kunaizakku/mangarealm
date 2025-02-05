@@ -39,7 +39,7 @@ body{
     top: 0;
     width: 100px;
     text-decoration: underline;
-    color: var(--font-color);
+    color: #ffffff;
     font-weight: 600;
 }
 
@@ -50,7 +50,7 @@ body{
     top: 0;
     width: 100px;
     text-decoration: none;
-    color: var(--font-color);
+    color: #ffffff;
     font-weight: 600;
 }
 

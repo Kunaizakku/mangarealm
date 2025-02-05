@@ -30,15 +30,15 @@
             font-size: 2em;
         }
 
-        .image-container {
+        .media-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px; /* Espacio entre las imágenes */
         }
 
-        .image-container img {
-            width: 700px; /* Ancho fijo para todas las imágenes */
+        .media-container img{
+            width: 700px; /* Ancho fijo para todas las imágenes y PDFs */
             height: auto; /* Mantiene la relación de aspecto */
             object-fit: cover; /* Ajusta la imagen para que cubra el contenedor */
             border-radius: 10px;
@@ -90,9 +90,16 @@
         </div>
     </div>
 
-    <div class="image-container">
+    <div class="media-container">
         @foreach ($pag_cap as $cap)
-            <img src="{{ asset($cap->imagen) }}" alt="capitulo">
+            @php
+                $extension = pathinfo($cap->imagen, PATHINFO_EXTENSION);
+            @endphp
+            @if ($extension == 'pdf')
+                <embed src="{{ asset($cap->imagen) }}" type="application/pdf" width="1000" height="1100" />
+            @else
+                <img src="{{ asset($cap->imagen) }}" alt="capitulo">
+            @endif
         @endforeach
     </div>
 
